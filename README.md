@@ -50,5 +50,5 @@ Sample Data
 
 ### Sending us your solution
 
-* Link to your PRIVATE git repo 
+* Link to your public git repo 
 * Or a link to your zipped up code
