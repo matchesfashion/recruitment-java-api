@@ -25,6 +25,8 @@ public class PapiserviceImpl implements Papiservice {
     @Override
     public List<PapiResponse> getItemsFromDatabase(PapiRequest papiRequest) {
 
+        papiResponses.clear();
+
         List<Product> productRepositoryAll = productRepository.findAll();
 
         List<Product> productRepositoryFiltered = productRepositoryAll.stream()

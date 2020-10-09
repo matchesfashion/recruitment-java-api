@@ -9,9 +9,9 @@ import lombok.Value;
 @ToString
 public class PapiResponse {
 
-    private Integer price;
     private Integer id;
     private String title;
     private String category;
+    private Integer price;
 
 }

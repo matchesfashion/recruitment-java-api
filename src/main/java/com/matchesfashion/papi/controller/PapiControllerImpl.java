@@ -33,18 +33,16 @@ public class PapiControllerImpl implements Controller {
     @Override
     public ResponseEntity addItemtoDatabase(@RequestBody PapiRequest papiRequest) {
 
-        //papiservice.getItemsFromDatabase(papiRequest);
-
-        return null;
+        return new ResponseEntity(HttpStatus.SERVICE_UNAVAILABLE);
     }
 
     @Override
     public ResponseEntity updateItemInDatabase() {
-        return null;
+        return new ResponseEntity(HttpStatus.SERVICE_UNAVAILABLE);
     }
 
     @Override
     public ResponseEntity deleteItemFromDB() {
-        return null;
+        return new ResponseEntity(HttpStatus.SERVICE_UNAVAILABLE);
     }
 }
