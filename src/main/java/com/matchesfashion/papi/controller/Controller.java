@@ -15,6 +15,9 @@ public interface Controller {
                                                       @RequestParam(required = false) Integer price,
                                                       @RequestParam(required = false, defaultValue = "100") String costAbove);
 
+    @GetMapping(path = "/getAllItems")
+    ResponseEntity<List<PapiResponse>> getAllItemsFromDB();
+
     @PostMapping(path = "/addItem")
     ResponseEntity addItemtoDatabase(@RequestBody PapiRequest papiRequest);
 

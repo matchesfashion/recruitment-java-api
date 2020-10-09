@@ -31,6 +31,11 @@ public class PapiControllerImpl implements Controller {
     }
 
     @Override
+    public ResponseEntity<List<PapiResponse>> getAllItemsFromDB(){
+        return new ResponseEntity(papiservice.getAllItemsFromDatabase(), HttpStatus.OK);
+    }
+
+    @Override
     public ResponseEntity addItemtoDatabase(@RequestBody PapiRequest papiRequest) {
 
         return new ResponseEntity(HttpStatus.SERVICE_UNAVAILABLE);

@@ -43,6 +43,18 @@ public class PapiserviceImpl implements Papiservice {
         return papiResponses;
     }
 
+    @Override
+    public List<PapiResponse> getAllItemsFromDatabase(){
+        papiResponses.clear();
+
+        List<Product> productRepositoryAll = productRepository.findAll();
+
+        productRepositoryAll.forEach(this::createPapiResponseList);
+
+        return papiResponses;
+
+    }
+
     private void createPapiResponseList(Product product) {
 
         papiResponses.add(PapiResponse.builder()
