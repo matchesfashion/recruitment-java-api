@@ -27,9 +27,7 @@ public class PapiserviceImpl implements Papiservice {
 
         papiResponses.clear();
 
-        List<Product> productRepositoryAll = productRepository.findAll();
-
-        List<Product> productRepositoryFiltered = productRepositoryAll.stream()
+        List<Product> productRepositoryFiltered = this.findAll().stream()
                 .filter(e -> e.getPrice() > Integer.valueOf(papiRequest.getCostAbove()))
                 .collect(Collectors.toList());
 
@@ -47,12 +45,14 @@ public class PapiserviceImpl implements Papiservice {
     public List<PapiResponse> getAllItemsFromDatabase(){
         papiResponses.clear();
 
-        List<Product> productRepositoryAll = productRepository.findAll();
-
-        productRepositoryAll.forEach(this::createPapiResponseList);
+        this.findAll().forEach(this::createPapiResponseList);
 
         return papiResponses;
 
+    }
+
+    private List<Product> findAll(){
+        return productRepository.findAll();
     }
 
     private void createPapiResponseList(Product product) {
