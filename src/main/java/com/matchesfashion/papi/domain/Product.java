@@ -1,68 +1,44 @@
 package com.matchesfashion.papi.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "products")
+@AllArgsConstructor
+@Builder
+@Data
+@NoArgsConstructor
 public class Product {
 
-  @GeneratedValue
-  @Id
-  private Integer id;
+    @GeneratedValue
+    @Id
+    private Integer id;
 
-  @Column
-  private String title;
+    @Column
+    private String title;
 
-  @Column
-  private String category;
+    @Column
+    private String category;
 
-  @Column
-  private Integer price;
+    @Column
+    private Integer price;
 
+    public String getCategory() {
+        return category;
+    }
 
-  public Integer getId() {
-    return id;
-  }
-
-  public void setId(Integer id) {
-    this.id = id;
-  }
-
-  public String getTitle() {
-    return title;
-  }
-
-  public void setTitle(String title) {
-    this.title = title;
-  }
-
-  public String getCategory() {
-    return category;
-  }
-
-  public void setCategory(String category) {
-    this.category = category;
-  }
-
-  public Integer getPrice() {
-    return price;
-  }
-
-  public void setPrice(Integer price) {
-    this.price = price;
-  }
-
-  @Override
-  public String toString() {
-    return "Product{" +
-        "id=" + id +
-        ", title='" + title + '\'' +
-        ", category='" + category + '\'' +
-        ", price=" + price +
-        '}';
-  }
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", category='" + category + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }

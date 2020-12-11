@@ -52,3 +52,8 @@ Sample Data
 
 * Link to your public git repo 
 * Or a link to your zipped up code
+
+### Endpoints
+
+* GET - http://localhost:8080/papi/getItems?costAbove={} - Will return all Products in DB over the specified amount
+* GET - http://localhost:8080/papi/getAllItems - Will return all Products in DB
